@@ -1,0 +1,193 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class ChessPositionGenerator {
+    private static int difficultyLevel = 1;
+    private static int points = 0;
+    private static final int MAX_DIFFICULTY_LEVEL = 10; // Maximum difficulty level
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("Current Difficulty Level: " + difficultyLevel);
+            System.out.println("Current Points: " + points);
+
+            System.out.print("Enter your move (row col): ");
+            int row = scanner.nextInt();
+            int col = scanner.nextInt();
+
+            if (isPositionCorrect(row, col)) {
+                points++;
+                System.out.println("Correct move! You earned 1 point.");
+            } else {
+                System.out.println("Incorrect move. Try again.");
+            }
+
+            if (points >= difficultyLevel * 5 && difficultyLevel < MAX_DIFFICULTY_LEVEL) {
+                difficultyLevel++;
+                System.out.println("Congratulations! You reached the next difficulty level: " + difficultyLevel);
+            }
+
+            char[][] chessboard = generateChessPosition();
+            printChessboard(chessboard);
+        }
+
+        // scanner.close();
+    }
+
+    /**
+     * Checks if the user's position is correct.
+     *
+     * @param row the row entered by the user
+     * @param col the column entered by the user
+     * @return true if the position is correct, false otherwise
+     */
+    public static boolean isPositionCorrect(int row, int col) {
+        // Your logic to determine if the position is correct
+        // Modify this method according to your requirements
+        return true;
+    }
+
+    /**
+     * Generates a randomized chess position.
+     *
+     * @return the generated chess position as a 2D character array
+     */
+    public static char[][] generateChessPosition() {
+        char[][] chessboard = new char[8][8];
+
+        // Array of chess piece types
+        char[] pieces = {'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'};
+
+        // Randomly shuffle the pieces array
+        shuffleArray(pieces);
+
+        // Place the pieces on the chessboard
+        for (int i = 0; i < pieces.length; i++) {
+            chessboard[0][i] = pieces[i];
+            chessboard[7][i] = Character.toLowerCase(pieces[i]);
+            chessboard[1][i] = 'P';
+            chessboard[6][i] = 'p';
+        }
+
+        return chessboard;
+    }
+
+    /**
+     * Prints the chessboard.
+     *
+     * @param chessboard the chessboard to be printed
+     */
+    public static void printChessboard(char[][] chessboard) {
+        for (int i = 0; i < chessboard.length; i++) {
+            for (int j = 0; j < chessboard[i].length; j++) {
+                System.out.print(chessboard[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    /**
+     * Shuffles the elements of the array using the Fisher-Yates algorithm.
+     *
+     * @param array the array to be shuffled
+     */
+    public static void shuffleArray(char
+    import java.util.Random;
+import java.util.Scanner;
+
+public class ChessPositionGenerator {
+    private static int difficultyLevel = 1;
+    private static int points = 0;
+    private static final int MAX_DIFFICULTY_LEVEL = 10; // Maximum difficulty level
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("Current Difficulty Level: " + difficultyLevel);
+            System.out.println("Current Points: " + points);
+
+            System.out.print("Enter your move (row col): ");
+            int row = scanner.nextInt();
+            int col = scanner.nextInt();
+
+            if (isPositionCorrect(row, col)) {
+                points++;
+                System.out.println("Correct move! You earned 1 point.");
+            } else {
+                System.out.println("Incorrect move. Try again.");
+            }
+
+            if (points >= difficultyLevel * 5 && difficultyLevel < MAX_DIFFICULTY_LEVEL) {
+                difficultyLevel++;
+                System.out.println("Congratulations! You reached the next difficulty level: " + difficultyLevel);
+            }
+
+            char[][] chessboard = generateChessPosition();
+            printChessboard(chessboard);
+        }
+
+        // scanner.close();
+    }
+
+    /**
+     * Checks if the user's position is correct.
+     *
+     * @param row the row entered by the user
+     * @param col the column entered by the user
+     * @return true if the position is correct, false otherwise
+     */
+    public static boolean isPositionCorrect(int row, int col) {
+        // Your logic to determine if the position is correct
+        // Modify this method according to your requirements
+        return true;
+    }
+
+    /**
+     * Generates a randomized chess position.
+     *
+     * @return the generated chess position as a 2D character array
+     */
+    public static char[][] generateChessPosition() {
+        char[][] chessboard = new char[8][8];
+
+        // Array of chess piece types
+        char[] pieces = {'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'};
+
+        // Randomly shuffle the pieces array
+        shuffleArray(pieces);
+
+        // Place the pieces on the chessboard
+        for (int i = 0; i < pieces.length; i++) {
+            chessboard[0][i] = pieces[i];
+            chessboard[7][i] = Character.toLowerCase(pieces[i]);
+            chessboard[1][i] = 'P';
+            chessboard[6][i] = 'p';
+        }
+
+        return chessboard;
+    }
+
+    /**
+     * Prints the chessboard.
+     *
+     * @param chessboard the chessboard to be printed
+     */
+    public static void printChessboard(char[][] chessboard) {
+        for (int i = 0; i < chessboard.length; i++) {
+            for (int j = 0; j < chessboard[i].length; j++) {
+                System.out.print(chessboard[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    /**
+     * Shuffles the elements of the array using the Fisher-Yates algorithm.
+     *
+     * @param array the array to be shuffled
+     */
+    public static void shuffleArray(char
+
